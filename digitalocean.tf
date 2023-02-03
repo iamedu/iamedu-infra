@@ -21,7 +21,12 @@ resource "digitalocean_app" "website" {
       }
 
       routes {
-        path = "/api"
+        path = "/graphql"
+        preserve_path_prefix = true
+      }
+
+      routes {
+        path = "/ide"
         preserve_path_prefix = true
       }
     }
