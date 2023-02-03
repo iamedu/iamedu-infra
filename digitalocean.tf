@@ -8,6 +8,16 @@ resource "digitalocean_app" "website" {
     name   = "iamedu-website"
     region = "sfo3"
 
+    domain {
+      name = "iamedu.io"
+      type = "PRIMARY"
+    }
+
+    domain {
+      name = "iamedu.dev"
+      type = "ALIAS"
+    }
+
     service {
       name      = "api"
       http_port = 8080
@@ -36,4 +46,12 @@ resource "digitalocean_app" "website" {
       }
     }
   }
+}
+
+data "digitalocean_domain" "iamedu_io" {
+  name = "iamedu.io"
+}
+
+data "digitalocean_domain" "iamedu_dev" {
+  name = "iamedu.dev"
 }
