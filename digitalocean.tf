@@ -22,6 +22,7 @@ resource "digitalocean_app" "website" {
 
       routes {
         path = "/api"
+        preserve_path_prefix = true
       }
     }
   }
