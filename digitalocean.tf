@@ -29,6 +29,11 @@ resource "digitalocean_app" "website" {
         path = "/ide"
         preserve_path_prefix = true
       }
+
+      routes {
+        path = "/assets"
+        preserve_path_prefix = true
+      }
     }
   }
 }
