@@ -52,7 +52,7 @@ resource "digitalocean_app" "website" {
       }
 
       routes {
-        path = "/assets"
+        path = "/assets/graphiql"
         preserve_path_prefix = true
       }
     }
