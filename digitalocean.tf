@@ -20,7 +20,7 @@ resource "digitalocean_app" "website" {
 
     static_site {
       name = "iamedu-front"
-      build_command = "npm build"
+      build_command = "npm run build"
 
       github {
         branch = "main"
