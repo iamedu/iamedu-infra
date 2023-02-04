@@ -21,7 +21,6 @@ resource "digitalocean_app" "website" {
     static_site {
       name = "iamedu-front"
       build_command = "npx --yes elm-spa build"
-      dockerfile_path = "elm-spa-builder"
 
       github {
         branch = "main"
