@@ -18,6 +18,17 @@ resource "digitalocean_app" "website" {
       type = "ALIAS"
     }
 
+    static_site {
+      name = "iamedu-front"
+      build_command = "npx elm-spa build"
+
+      github {
+        branch = "main"
+        deploy_on_push = true
+        repo = "iamedu/iamedu-front"
+      }
+    }
+
     service {
       name      = "api"
       http_port = 8080
@@ -45,6 +56,8 @@ resource "digitalocean_app" "website" {
         preserve_path_prefix = true
       }
     }
+
+
   }
 }
 
