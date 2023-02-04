@@ -20,7 +20,7 @@ resource "digitalocean_app" "website" {
 
     static_site {
       name = "iamedu-front"
-      build_command = "npx --yes elm-spa build"
+      build_command = "npm build"
 
       github {
         branch = "main"
